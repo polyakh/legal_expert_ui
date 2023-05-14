@@ -1,9 +1,8 @@
-import * as React from 'react';
+"use client"
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -55,7 +54,7 @@ export default function Header(props: Props) {
 
   return (
       <Box component='header'>
-        <AppBar component="nav">
+        <AppBar component="nav" position='sticky'>
           <Toolbar>
           <IconButton
             color="inherit"

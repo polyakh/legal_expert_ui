@@ -7,7 +7,7 @@ const COMPONENT_KEY = "Footer";
 
 function Footer() {
     return (
-      <Box component='footer' sx={{ bgcolor: '#f0f0f0', width: '100%', mt: 'auto', py: 3,     position: 'fixed',
+      <Box component='footer' sx={{ bgcolor: '#f0f0f0', width: '100%', mt: 'auto', py: 3,
       bottom: 0,
       left: 0,
       right: 0,
