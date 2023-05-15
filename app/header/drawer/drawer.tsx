@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 //region Global Imports
-import React, { useState } from 'react';
-import NextLink from 'next/link';
+import React, { useState } from "react";
+import NextLink from "next/link";
 import {
   Box,
   Divider,
@@ -10,44 +10,42 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-} from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+} from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 //endregion
 
-import { NAV_ITEMS } from '~/app/header'
+import { NAV_ITEMS } from "~/app/header";
 
-const COMPONENT_KEY = 'Drawer'
+const COMPONENT_KEY = "Drawer";
 
 interface DrawerOwnProps {
   onClose: () => void;
 }
 function Logo() {
-  return <img src="/next.svg" alt="Your Logo" width={40} height={40} /> 
+  return <img src="/next.svg" alt="Your Logo" width={40} height={40} />;
 }
-  
 
 function Drawer({ onClose }: DrawerOwnProps) {
   return (
-    <Box onClick={onClose} sx={{textAlign: 'center'}}>
+    <Box onClick={onClose} sx={{ textAlign: "center" }}>
       <NextLink href="/">
         <Logo />
       </NextLink>
       <Divider />
       <List>
         {NAV_ITEMS.map((item) => (
-           <ListItem key={item} disablePadding>
+          <ListItem key={item} disablePadding>
             <NextLink href={`/${item.toLowerCase()}`}>
-              <ListItemButton sx={{textAlign: 'center'}}>
+              <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item} />
               </ListItemButton>
             </NextLink>
-         </ListItem>
+          </ListItem>
         ))}
       </List>
     </Box>
   );
 }
-
 
 export { COMPONENT_KEY };
 export default Drawer;

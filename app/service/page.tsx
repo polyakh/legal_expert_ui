@@ -1,4 +1,4 @@
-"use client"
+"use client";
 //region Global Imports
 import { AppBar, Toolbar, Typography } from "@mui/material";
 //endregion
@@ -6,9 +6,7 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 const COMPONENT_KEY = "ServicePage";
 
 function ServicePage() {
-    return (
-        <main>ServicePage</main>
-      );
+  return <main>ServicePage</main>;
 }
 
 export { COMPONENT_KEY };

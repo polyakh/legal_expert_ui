@@ -13,5 +13,5 @@ export const ROUTES_PATH: Record<string, string> = {
 };
 
 export type RoutesPath = {
-  [key in keyof typeof ROUTES_PATH]: typeof ROUTES_PATH[key];
+  [key in keyof typeof ROUTES_PATH]: (typeof ROUTES_PATH)[key];
 };

@@ -9,9 +9,9 @@ export const ROUTES_PATH: Record<string, string> = {
   PATH_SERVICES,
   PATH_ABOUT_US,
   PATH_CONTACTS,
-  PATH_PRIVACY_POLICY
+  PATH_PRIVACY_POLICY,
 };
 
 export type RoutesPath = {
-  [key in keyof typeof ROUTES_PATH]: typeof ROUTES_PATH[key];
+  [key in keyof typeof ROUTES_PATH]: (typeof ROUTES_PATH)[key];
 };
