@@ -1,17 +1,21 @@
 "use client";
 import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import Img from "next/image";
+import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import {
+  AppBar,
+  Box,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+  Button
+} from "@mui/material"
 
 interface Props {
   /**
@@ -22,7 +26,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "Services", "About", "Contact"];
 
 export default function Header(props: Props) {
   const { window } = props;
@@ -71,13 +75,19 @@ export default function Header(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+               <Link href='/'>
+               <Img alt='logo' width={250} height={150} src='/logo.png'/>
+              </Link>
+  
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Link href={`${item.toLowerCase()}/`}>
+   <Button key={item} sx={{ color: "#fff" }}>
                 {item}
               </Button>
+              </Link>
+           
             ))}
           </Box>
         </Toolbar>

@@ -9,18 +9,31 @@ import {
   Accordion,
   AccordionSummary,
 } from "@mui/material";
+import { useRouter } from 'next/router';
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import styles from "./page.module.css";
 
-export default function Home() {
+import { loadLocaleData } from '~/app/shared/utilities'
+
+function useTranslation(messages: Record<string, string>) {
+  const t = (key: string) => messages[key] || key;
+
+  return {
+    t,
+  };
+}
+
+export default function Home({locale, messages}: any = {}) {
+  const { t } = useTranslation(messages);
   return (
     <main>
       <Container maxWidth="lg">
         <Grid container className={styles.sectionTop}>
           <Grid item xs={12} md={6}>
             <Typography variant="h2" component="h2" gutterBottom>
-              LegalExpert
+              Legal Expert
             </Typography>
             <Typography variant="h6" component="h2" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
@@ -134,3 +147,4 @@ export default function Home() {
     </main>
   );
 }
+

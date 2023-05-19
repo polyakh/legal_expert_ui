@@ -10,10 +10,8 @@ const COMPONENT_KEY = "CookieBanner";
 function CookieBanner() {
   const [isShowCookieBanner, setCookieValue, removeCookie] = useCookies(IS_SHOW_COOKIE_BANNER, true);
   const handleBtnClick = () => {
-    // handleToggle();
     setCookieValue(false);
   }
-  console.log("isShowCookieBanner", isShowCookieBanner)
   return isShowCookieBanner ? <Alert
       action={
         <Button color="inherit" size="small" onClick={handleBtnClick}>
